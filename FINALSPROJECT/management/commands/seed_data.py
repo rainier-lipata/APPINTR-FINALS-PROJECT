@@ -17,7 +17,6 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS("Roles inserted"))
 
 
-        # ---------- STATUS ----------
         statuses = ["Active", "Inactive", "Completed"]
         status_objs = {}
 
