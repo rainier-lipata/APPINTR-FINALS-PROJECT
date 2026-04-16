@@ -1,23 +1,6 @@
 from django.db import models
 
 
-
-class Role(models.Model):
-    role_name = models.CharField(max_length=50, unique=True)
-
-    def __str__(self):
-        return self.role_name
-
-
-
-class Status(models.Model):
-    status_name = models.CharField(max_length=50, unique=True)
-
-    def __str__(self):
-        return self.status_name
-
-
-
 class Student(models.Model):
     GENDER_CHOICES = [
         ('Male', 'Male'),
@@ -40,8 +23,6 @@ class Student(models.Model):
     phone = models.CharField(max_length=20, blank=True, null=True)
     photo = models.ImageField(upload_to='students/', blank=True, null=True)
 
-    role = models.ForeignKey(Role, on_delete=models.PROTECT)
-    status = models.ForeignKey(Status, on_delete=models.PROTECT)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -63,8 +44,6 @@ class Mentor(models.Model):
     phone = models.CharField(max_length=20, blank=True, null=True)
     photo = models.ImageField(upload_to='mentors/', blank=True, null=True)
 
-    role = models.ForeignKey(Role, on_delete=models.PROTECT)
-    status = models.ForeignKey(Status, on_delete=models.PROTECT)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -80,7 +59,6 @@ class Admin(models.Model):
 
     email = models.EmailField(unique=True)
 
-    role = models.ForeignKey(Role, on_delete=models.PROTECT)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -96,8 +74,6 @@ class Session(models.Model):
     session_date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
-
-    status = models.ForeignKey(Status, on_delete=models.PROTECT)
 
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -1,19 +1,5 @@
 from django.contrib import admin
-from .models import Role, Status, Student, Mentor, Admin, Session
-
-
-
-@admin.register(Role)
-class RoleAdmin(admin.ModelAdmin):
-    list_display = ('id', 'role_name')
-    search_fields = ('role_name',)
-
-
-
-@admin.register(Status)
-class StatusAdmin(admin.ModelAdmin):
-    list_display = ('id', 'status_name')
-    search_fields = ('status_name',)
+from .models import Student, Mentor, Admin, Session
 
 
 
@@ -29,8 +15,6 @@ class StudentAdmin(admin.ModelAdmin):
         'course',
         'gender',
         'email',
-        'role',
-        'status',
         'created_at',
     )
 
@@ -46,8 +30,6 @@ class StudentAdmin(admin.ModelAdmin):
         'department',
         'course',
         'gender',
-        'role',
-        'status'
     )
 
 
@@ -62,8 +44,6 @@ class MentorAdmin(admin.ModelAdmin):
         'department',
         'expertise',
         'email',
-        'role',
-        'status',
         'created_at',
     )
 
@@ -77,8 +57,6 @@ class MentorAdmin(admin.ModelAdmin):
     list_filter = (
         'department',
         'expertise',
-        'role',
-        'status'
     )
 
 
@@ -91,7 +69,6 @@ class AdminAdmin(admin.ModelAdmin):
         'last_name',
         'first_name',
         'email',
-        'role',
         'created_at',
     )
 
@@ -113,7 +90,6 @@ class SessionAdmin(admin.ModelAdmin):
         'session_date',
         'start_time',
         'end_time',
-        'status',
         'created_at',
     )
 
@@ -124,5 +100,4 @@ class SessionAdmin(admin.ModelAdmin):
 
     list_filter = (
         'session_date',
-        'status',
     )
