@@ -72,7 +72,7 @@ class MentorAdmin(admin.ModelAdmin):
         'last_name',
         'first_name',
         'department',
-        'expertise',
+        'get_expertise',
         'email',
         'created_at',
     )
@@ -91,6 +91,10 @@ class MentorAdmin(admin.ModelAdmin):
 
     filter_horizontal = ('expertise',)
 
+    def get_expertise(self, obj):
+        return ", ".join([e.name for e in obj.expertise.all()])
+
+    get_expertise.short_description = "Expertise"
 
 # =========================
 # MENTOR AVAILABILITY ADMIN
