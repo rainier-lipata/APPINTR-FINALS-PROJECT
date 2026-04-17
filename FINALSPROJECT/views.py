@@ -1,56 +1,63 @@
 from rest_framework import generics
-<<<<<<< HEAD
 from .models import (
     Student, Mentor, Admin, Session,
     Expertise, MentorAvailability, StudentPreference
 )
 
-=======
-from .models import  Student, Mentor, Admin, Session
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 from .serializers import (
     StudentSerializer,
     MentorSerializer,
     AdminSerializer,
     SessionSerializer,
-<<<<<<< HEAD
     ExpertiseSerializer,
     MentorAvailabilitySerializer,
     StudentPreferenceSerializer
 )
 
 
-=======
-)
-
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
+# =========================
+# STUDENT
+# =========================
 class StudentListAPIView(generics.ListAPIView):
     queryset = Student.objects.all().order_by('last_name', 'first_name')
     serializer_class = StudentSerializer
 
 
+# =========================
+# MENTOR
+# =========================
 class MentorListAPIView(generics.ListAPIView):
-<<<<<<< HEAD
-    queryset = Mentor.objects.prefetch_related(
-        'expertise'
-    ).all().order_by('last_name', 'first_name')
-
+    queryset = Mentor.objects.prefetch_related('expertise').all().order_by('last_name', 'first_name')
     serializer_class = MentorSerializer
 
 
+# =========================
+# EXPERTISE
+# =========================
 class ExpertiseListAPIView(generics.ListAPIView):
     queryset = Expertise.objects.all().order_by('name')
     serializer_class = ExpertiseSerializer
 
 
+# =========================
+# MENTOR AVAILABILITY
+# =========================
 class MentorAvailabilityListAPIView(generics.ListAPIView):
-    queryset = MentorAvailability.objects.select_related(
-        'mentor'
-    ).all()
-
+    queryset = MentorAvailability.objects.select_related('mentor').all()
     serializer_class = MentorAvailabilitySerializer
 
 
+# =========================
+# STUDENT PREFERENCE
+# =========================
+class StudentPreferenceListAPIView(generics.ListAPIView):
+    queryset = StudentPreference.objects.select_related('student').all()
+    serializer_class = StudentPreferenceSerializer
+
+
+# =========================
+# MENTOR MATCHING SYSTEM
+# =========================
 class MentorMatchAPIView(generics.ListAPIView):
     serializer_class = MentorSerializer
 
@@ -60,14 +67,12 @@ class MentorMatchAPIView(generics.ListAPIView):
         try:
             pref = StudentPreference.objects.get(student_id=student_id)
         except StudentPreference.DoesNotExist:
-            return Mentor.objects.all()
+            return Mentor.objects.prefetch_related('expertise').all()
 
         queryset = Mentor.objects.prefetch_related('expertise')
 
         if pref.preferred_department:
-            queryset = queryset.filter(
-                department=pref.preferred_department
-            )
+            queryset = queryset.filter(department=pref.preferred_department)
 
         if pref.preferred_expertise:
             queryset = queryset.filter(
@@ -77,34 +82,17 @@ class MentorMatchAPIView(generics.ListAPIView):
         return queryset.distinct().order_by('last_name')
 
 
-
-class StudentPreferenceListAPIView(generics.ListAPIView):
-    queryset = StudentPreference.objects.select_related(
-        'student'
-    ).all()
-
-    serializer_class = StudentPreferenceSerializer
-
-=======
-    queryset = Mentor.objects.all().order_by('last_name', 'first_name')
-    serializer_class = MentorSerializer
-
-
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
-
+# =========================
+# ADMIN
+# =========================
 class AdminListAPIView(generics.ListAPIView):
     queryset = Admin.objects.all().order_by('last_name', 'first_name')
     serializer_class = AdminSerializer
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
+# =========================
+# SESSION
+# =========================
 class SessionListAPIView(generics.ListAPIView):
-    queryset = Session.objects.select_related(
-        'student',
-        'mentor',
-    ).all().order_by('session_date')
-
+    queryset = Session.objects.select_related('student', 'mentor').all().order_by('session_date')
     serializer_class = SessionSerializer

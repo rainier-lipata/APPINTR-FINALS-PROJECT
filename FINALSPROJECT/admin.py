@@ -1,21 +1,25 @@
 from django.contrib import admin
-<<<<<<< HEAD
 from .models import (
-    Student, Mentor, Admin, Session,
-    Expertise, MentorAvailability, StudentPreference
+    Student,
+    Mentor,
+    Admin,
+    Session,
+    Expertise,
+    MentorAvailability,
+    StudentPreference
 )
 
-
+# =========================
+# STUDENT PREFERENCE INLINE
+# =========================
 class StudentPreferenceInline(admin.StackedInline):
     model = StudentPreference
     extra = 0
 
-=======
-from .models import Student, Mentor, Admin, Session
 
-
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
-
+# =========================
+# STUDENT ADMIN
+# =========================
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = (
@@ -45,18 +49,21 @@ class StudentAdmin(admin.ModelAdmin):
         'gender',
     )
 
-<<<<<<< HEAD
     inlines = [StudentPreferenceInline]
 
 
+# =========================
+# EXPERTISE ADMIN
+# =========================
 @admin.register(Expertise)
 class ExpertiseAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     search_fields = ('name',)
-=======
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 
+# =========================
+# MENTOR ADMIN
+# =========================
 @admin.register(Mentor)
 class MentorAdmin(admin.ModelAdmin):
     list_display = (
@@ -65,10 +72,7 @@ class MentorAdmin(admin.ModelAdmin):
         'last_name',
         'first_name',
         'department',
-<<<<<<< HEAD
-=======
         'expertise',
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
         'email',
         'created_at',
     )
@@ -85,10 +89,12 @@ class MentorAdmin(admin.ModelAdmin):
         'expertise',
     )
 
-<<<<<<< HEAD
     filter_horizontal = ('expertise',)
 
 
+# =========================
+# MENTOR AVAILABILITY ADMIN
+# =========================
 @admin.register(MentorAvailability)
 class MentorAvailabilityAdmin(admin.ModelAdmin):
     list_display = (
@@ -103,6 +109,9 @@ class MentorAvailabilityAdmin(admin.ModelAdmin):
     search_fields = ('mentor__last_name',)
 
 
+# =========================
+# STUDENT PREFERENCE ADMIN
+# =========================
 @admin.register(StudentPreference)
 class StudentPreferenceAdmin(admin.ModelAdmin):
     list_display = (
@@ -122,10 +131,11 @@ class StudentPreferenceAdmin(admin.ModelAdmin):
         'preferred_department',
         'preferred_gender',
     )
-=======
->>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 
+# =========================
+# ADMIN
+# =========================
 @admin.register(Admin)
 class AdminAdmin(admin.ModelAdmin):
     list_display = (
@@ -145,7 +155,9 @@ class AdminAdmin(admin.ModelAdmin):
     )
 
 
-
+# =========================
+# SESSION
+# =========================
 @admin.register(Session)
 class SessionAdmin(admin.ModelAdmin):
     list_display = (
