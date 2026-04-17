@@ -30,12 +30,15 @@ class Student(models.Model):
         return f"{self.student_number} - {self.last_name}, {self.first_name}"
 
 
+<<<<<<< HEAD
 class Expertise(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.name
 
+=======
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 class Mentor(models.Model):
     mentor_number = models.CharField(max_length=50, unique=True)
@@ -44,7 +47,11 @@ class Mentor(models.Model):
     middle_initial = models.CharField(max_length=10, blank=True, null=True)
 
     department = models.CharField(max_length=150)
+<<<<<<< HEAD
     expertise = models.ManyToManyField(Expertise)
+=======
+    expertise = models.CharField(max_length=150)
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
@@ -56,6 +63,7 @@ class Mentor(models.Model):
     def __str__(self):
         return f"{self.mentor_number} - {self.last_name}, {self.first_name}"
 
+<<<<<<< HEAD
 class MentorAvailability(models.Model):
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
@@ -84,6 +92,8 @@ class StudentPreference(models.Model):
 
     def __str__(self):
         return f"Preferences of {self.student}"
+=======
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 
 class Admin(models.Model):

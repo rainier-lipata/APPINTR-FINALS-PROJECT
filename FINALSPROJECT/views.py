@@ -1,26 +1,36 @@
 from rest_framework import generics
+<<<<<<< HEAD
 from .models import (
     Student, Mentor, Admin, Session,
     Expertise, MentorAvailability, StudentPreference
 )
 
+=======
+from .models import  Student, Mentor, Admin, Session
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 from .serializers import (
     StudentSerializer,
     MentorSerializer,
     AdminSerializer,
     SessionSerializer,
+<<<<<<< HEAD
     ExpertiseSerializer,
     MentorAvailabilitySerializer,
     StudentPreferenceSerializer
 )
 
 
+=======
+)
+
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 class StudentListAPIView(generics.ListAPIView):
     queryset = Student.objects.all().order_by('last_name', 'first_name')
     serializer_class = StudentSerializer
 
 
 class MentorListAPIView(generics.ListAPIView):
+<<<<<<< HEAD
     queryset = Mentor.objects.prefetch_related(
         'expertise'
     ).all().order_by('last_name', 'first_name')
@@ -75,12 +85,22 @@ class StudentPreferenceListAPIView(generics.ListAPIView):
 
     serializer_class = StudentPreferenceSerializer
 
+=======
+    queryset = Mentor.objects.all().order_by('last_name', 'first_name')
+    serializer_class = MentorSerializer
+
+
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 class AdminListAPIView(generics.ListAPIView):
     queryset = Admin.objects.all().order_by('last_name', 'first_name')
     serializer_class = AdminSerializer
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 class SessionListAPIView(generics.ListAPIView):
     queryset = Session.objects.select_related(
         'student',

@@ -4,6 +4,7 @@ from .views import (
     MentorListAPIView,
     AdminListAPIView,
     SessionListAPIView,
+<<<<<<< HEAD
     ExpertiseListAPIView,
     MentorAvailabilityListAPIView,
     StudentPreferenceListAPIView,
@@ -26,4 +27,13 @@ urlpatterns = [
     path('admins/', AdminListAPIView.as_view(), name='admin-list'),
 
     path('sessions/', SessionListAPIView.as_view(), name='session-list'),
+=======
+)
+
+urlpatterns = [
+    path('students/', StudentListAPIView.as_view()),
+    path('mentors/', MentorListAPIView.as_view()),
+    path('admins/', AdminListAPIView.as_view()),
+    path('sessions/', SessionListAPIView.as_view()),
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 ]

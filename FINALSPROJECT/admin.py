@@ -1,4 +1,5 @@
 from django.contrib import admin
+<<<<<<< HEAD
 from .models import (
     Student, Mentor, Admin, Session,
     Expertise, MentorAvailability, StudentPreference
@@ -9,6 +10,11 @@ class StudentPreferenceInline(admin.StackedInline):
     model = StudentPreference
     extra = 0
 
+=======
+from .models import Student, Mentor, Admin, Session
+
+
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
@@ -39,6 +45,7 @@ class StudentAdmin(admin.ModelAdmin):
         'gender',
     )
 
+<<<<<<< HEAD
     inlines = [StudentPreferenceInline]
 
 
@@ -46,6 +53,8 @@ class StudentAdmin(admin.ModelAdmin):
 class ExpertiseAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     search_fields = ('name',)
+=======
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 
 @admin.register(Mentor)
@@ -56,6 +65,10 @@ class MentorAdmin(admin.ModelAdmin):
         'last_name',
         'first_name',
         'department',
+<<<<<<< HEAD
+=======
+        'expertise',
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
         'email',
         'created_at',
     )
@@ -72,6 +85,7 @@ class MentorAdmin(admin.ModelAdmin):
         'expertise',
     )
 
+<<<<<<< HEAD
     filter_horizontal = ('expertise',)
 
 
@@ -108,6 +122,8 @@ class StudentPreferenceAdmin(admin.ModelAdmin):
         'preferred_department',
         'preferred_gender',
     )
+=======
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 
 
 @admin.register(Admin)

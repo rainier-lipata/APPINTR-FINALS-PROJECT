@@ -5,8 +5,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
 
     # API routes (connects to FINALSPROJECT/urls.py)
+=======
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
     path('api/', include('FINALSPROJECT.urls')),
 ]
 

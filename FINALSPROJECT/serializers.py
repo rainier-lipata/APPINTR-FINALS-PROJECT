@@ -1,4 +1,5 @@
 from rest_framework import serializers
+<<<<<<< HEAD
 from .models import (
     Student, Mentor, Admin, Session,
     Expertise, MentorAvailability, StudentPreference
@@ -30,6 +31,12 @@ class StudentSerializer(serializers.ModelSerializer):
         read_only=True
     )
 
+=======
+from .models import  Student, Mentor, Admin, Session
+
+
+class StudentSerializer(serializers.ModelSerializer):
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
     class Meta:
         model = Student
         fields = [
@@ -46,6 +53,7 @@ class StudentSerializer(serializers.ModelSerializer):
             'phone',
             'photo',
             'created_at',
+<<<<<<< HEAD
             'preferences',
         ]
 
@@ -53,6 +61,11 @@ class StudentSerializer(serializers.ModelSerializer):
 class MentorSerializer(serializers.ModelSerializer):
     expertise = ExpertiseSerializer(many=True, read_only=True)
 
+=======
+        ]
+
+class MentorSerializer(serializers.ModelSerializer):
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
     class Meta:
         model = Mentor
         fields = [
@@ -69,6 +82,7 @@ class MentorSerializer(serializers.ModelSerializer):
             'created_at',
         ]
 
+<<<<<<< HEAD
 
 class MentorAvailabilitySerializer(serializers.ModelSerializer):
     class Meta:
@@ -82,6 +96,8 @@ class MentorAvailabilitySerializer(serializers.ModelSerializer):
         ]
 
 
+=======
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
 class AdminSerializer(serializers.ModelSerializer):
     class Meta:
         model = Admin
@@ -94,6 +110,7 @@ class AdminSerializer(serializers.ModelSerializer):
             'created_at',
         ]
 
+<<<<<<< HEAD
 
 class SessionSerializer(serializers.ModelSerializer):
     student_name = serializers.CharField(
@@ -102,6 +119,15 @@ class SessionSerializer(serializers.ModelSerializer):
     )
     mentor_name = serializers.CharField(
         source='mentor.__str__',
+=======
+class SessionSerializer(serializers.ModelSerializer):
+    student_name = serializers.CharField(
+        source='student.last_name',
+        read_only=True
+    )
+    mentor_name = serializers.CharField(
+        source='mentor.last_name',
+>>>>>>> 48a72de28a5aae4ac1c56b6a0e35961a47aefad3
         read_only=True
     )
 
