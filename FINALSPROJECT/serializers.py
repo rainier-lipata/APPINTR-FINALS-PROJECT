@@ -58,6 +58,10 @@ class StudentSerializer(serializers.ModelSerializer):
             'preferences',
         ]
 
+        extra_kwargs = {
+            'created_at': {'read_only': True},
+        }
+
 
 # =========================
 # MENTOR
@@ -81,6 +85,9 @@ class MentorSerializer(serializers.ModelSerializer):
             'created_at',
         ]
 
+        extra_kwargs = {
+            'created_at': {'read_only': True},
+        }
 
 # =========================
 # MENTOR AVAILABILITY

@@ -72,7 +72,6 @@ class MentorAdmin(admin.ModelAdmin):
         'last_name',
         'first_name',
         'department',
-        'expertise',
         'email',
         'created_at',
     )

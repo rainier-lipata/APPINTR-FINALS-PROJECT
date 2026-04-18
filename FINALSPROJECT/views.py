@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from .models import (
     Student, Mentor, Admin, Session,
     Expertise, MentorAvailability, StudentPreference
@@ -18,19 +19,36 @@ from .serializers import (
 # =========================
 # STUDENT
 # =========================
-class StudentListAPIView(generics.ListAPIView):
+
+class StudentListCreateAPIView(generics.ListCreateAPIView):
     queryset = Student.objects.all().order_by('last_name', 'first_name')
     serializer_class = StudentSerializer
 
 
+class StudentRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    parser_classes = [MultiPartParser, FormParser, JSONParser]
+
+class StudentDeleteAPIView(generics.DestroyAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
 # =========================
 # MENTOR
 # =========================
-class MentorListAPIView(generics.ListAPIView):
+class MentorListCreateAPIView(generics.ListCreateAPIView):
     queryset = Mentor.objects.prefetch_related('expertise').all().order_by('last_name', 'first_name')
     serializer_class = MentorSerializer
 
+class MentorRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = Mentor.objects.all()
+    serializer_class = MentorSerializer
+    parser_classes = [MultiPartParser, FormParser, JSONParser]
 
+class MentorDeleteAPIView(generics.DestroyAPIView):
+    queryset = Mentor.objects.all()
+    serializer_class = MentorSerializer
 # =========================
 # EXPERTISE
 # =========================
