@@ -10,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/DjangoProject5/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject5/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FINALSPROJECT/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/FINALSPROJECT/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FINALSPROJECT/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/FINALSPROJECT/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FINALSPROJECT/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FINALSPROJECT/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/FINALSPROJECT/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FINALSPROJECT/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/FINALSPROJECT/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FINALSPROJECT/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/FINALSPROJECT/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FINALSPROJECT/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FINALSPROJECT/views.py" afterDir="false" />
@@ -39,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.DjangoProject4.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Rainier/PycharmProjects/APPDAET_BTCS/DjangoProject4",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.DjangoProject4.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rainier/PycharmProjects/APPDAET_BTCS/DjangoProject4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Django Server.DjangoProject4">
     <configuration name="DjangoProject4" type="Python.DjangoServer" factoryName="Django server">
       <module name="DjangoProject4" />
@@ -126,6 +126,7 @@
       <updated>1776400204526</updated>
       <workItem from="1776400205564" duration="5338000" />
       <workItem from="1776407092192" duration="6860000" />
+      <workItem from="1776491523854" duration="289000" />
     </task>
     <servers />
   </component>
